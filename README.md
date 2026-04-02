@@ -145,7 +145,20 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
 *Recent feedback submitted directly to our API.*
 
 <!-- LIVE_FEEDBACK_START -->
-*Awaiting fresh community feedback...*
+<table>
+  <tr>
+    <th width="15%">User</th>
+    <th width="10%">Rating</th>
+    <th width="10%">Type</th>
+    <th width="65%">Feedback</th>
+  </tr>
+  <tr>
+    <td><strong>@yogender-ai</strong></td>
+    <td>⭐⭐⭐⭐⭐</td>
+    <td align="center">💬</td>
+    <td>## 💚 User Feedback | Field | Value | |-------|-------| | **Author** | yash | | **Type** | Positiv... <br/><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/2">View Thread &rarr;</a></td>
+  </tr>
+</table>
 <!-- LIVE_FEEDBACK_END -->
 
 ---
