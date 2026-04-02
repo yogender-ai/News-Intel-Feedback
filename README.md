@@ -141,6 +141,13 @@ User clicks "Feedback" → Submits via platform UI → Backend creates GitHub Is
 
 Every piece of feedback includes a **star rating (1-5)**, emotion type, and timestamp.
 
+### 🔴 Live Community Wall
+*Recent feedback submitted directly to our API.*
+
+<!-- LIVE_FEEDBACK_START -->
+*Awaiting fresh community feedback...*
+<!-- LIVE_FEEDBACK_END -->
+
 ---
 
 ## ⭐ Support This Project
