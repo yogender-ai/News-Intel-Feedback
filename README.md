@@ -162,7 +162,13 @@ If you find NewsIntel useful, please consider:
 
 ### ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yogender-ai/News-Intel-Feedback&type=Date&theme=dark)](https://star-history.com/#yogender-ai/News-Intel-Feedback&Date)
+<a href="https://star-history.com/#yogender-ai/News-Intel-Feedback&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=yogender-ai/News-Intel-Feedback&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=yogender-ai/News-Intel-Feedback&type=date&theme=light&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=yogender-ai/News-Intel-Feedback&type=date&legend=top-left" />
+ </picture>
+</a>
 
 </div>
 
