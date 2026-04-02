@@ -30,23 +30,42 @@ def extract_metadata_from_body(body):
     if not body:
         return metadata
         
-    # Emotion mapping
-    if "Type:" in body or "Emotion:" in body:
-        lower_body = body.lower()
+    # Emotion/Type extraction from body
+    lower_body = body.lower()
+    
+    # Try table format first: | **Type** | Value |
+    type_match = re.search(r'\*\*Type\*\*\s*\|\s*(.+?)\s*\|', body, re.IGNORECASE)
+    if type_match:
+        type_val = type_match.group(1).lower()
+        if "praise" in type_val or "positive" in type_val: metadata["emotion"] = "💚"
+        elif "bug" in type_val or "negative" in type_val: metadata["emotion"] = "🔴"
+        elif "idea" in type_val or "enhancement" in type_val: metadata["emotion"] = "💡"
+    elif "type:" in lower_body or "emotion:" in lower_body:
+        # Fallback for old list format
         if "praise" in lower_body or "positive" in lower_body: metadata["emotion"] = "💚"
         elif "bug" in lower_body or "negative" in lower_body: metadata["emotion"] = "🔴"
         elif "idea" in lower_body or "enhancement" in lower_body: metadata["emotion"] = "💡"
         
     # Rating extraction
-    for line in body.split('\n'):
-        if "Rating:" in line:
-            stars = line.split(":")[-1].strip()
-            # If stars is e.g. "5/5"
-            try:
-                rating = int(re.search(r'\d+', stars).group())
-                metadata["rating"] = "⭐" * rating
-            except:
-                pass
+    # Try table format: | **Rating** | ⭐⭐⭐ (5/5) |
+    rating_match = re.search(r'\*\*Rating\*\*\s*\|\s*(.+?)\s*\|', body)
+    if rating_match:
+        stars_line = rating_match.group(1)
+        stars_count = stars_line.count("⭐")
+        if stars_count > 0:
+            metadata["rating"] = "⭐" * stars_count
+    else:
+        # Fallback for old list format
+        for line in body.split('\n'):
+            if "Rating:" in line:
+                stars = line.split(":")[-1].strip()
+                try:
+                    rating = int(re.search(r'\d+', stars).group())
+                    metadata["rating"] = "⭐" * rating
+                except:
+                    if "⭐" in stars:
+                        metadata["rating"] = "⭐" * stars.count("⭐")
+                break
                 
     return metadata
 
@@ -81,13 +100,29 @@ def format_issues(issues):
         title = issue['title']
         body = issue.get('body', '')
         
+        # --- Advanced Author Extraction ---
         display_author = author
-        if title.startswith("Feedback from "):
-            display_author = title.replace("Feedback from ", "").strip()
-        elif title.startswith("Idea from "):
-            display_author = title.replace("Idea from ", "").strip()
-        elif title.startswith("Issue from "):
-            display_author = title.replace("Issue from ", "").strip()
+        
+        # 1. Try body table: **Author** | name |
+        author_match = re.search(r'\*\*Author\*\*\s*\|\s*(.+?)\s*\|', body)
+        if author_match:
+            display_author = author_match.group(1).strip()
+        else:
+            # 2. Try body list: **Author:** name
+            author_match = re.search(r'\*\*Author:\*\*\s*(.+)', body)
+            if author_match:
+                display_author = author_match.group(1).strip()
+            else:
+                # 3. Try title: "Feedback from Name" (ignoring emojis)
+                title_match = re.search(r'Feedback from\s+(.+?)(?:\s+—|$)', title)
+                if title_match:
+                    display_author = title_match.group(1).strip()
+                elif " from " in title:
+                    # Fallback for "Idea from Name", "Issue from Name"
+                    display_author = title.split(" from ")[-1].split("—")[0].strip()
+        
+        # Remove any @ from display_author to avoid double @@
+        display_author = display_author.replace('@', '')
             
         url = issue['html_url']
         metadata = extract_metadata_from_body(body)
