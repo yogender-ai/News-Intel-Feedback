@@ -145,20 +145,37 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
 *Recent feedback submitted directly to our API.*
 
 <!-- LIVE_FEEDBACK_START -->
-<table>
-  <tr>
-    <th width="15%">User</th>
-    <th width="10%">Rating</th>
-    <th width="10%">Type</th>
-    <th width="65%">Feedback</th>
+<div align="center">
+  <a href="https://newsintel.yogender1.me/#feedback-section">
+    <img src="https://img.shields.io/badge/✨_Post_Feedback_Live-6366f1?style=for-the-badge&logo=rocket" alt="Post Feedback" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/yogender-ai/News-Intel-Feedback/issues">
+    <img src="https://img.shields.io/badge/💬_View_All_Discussions-0f0f23?style=for-the-badge&logo=github" alt="View All" />
+  </a>
+</div>
+<br/>
+
+<table width="100%">
+  <tr style="background: rgba(99, 102, 241, 0.1);">
+    <th width="20%" align="left">👤 User</th>
+    <th width="15%" align="center">⭐ Rating</th>
+    <th width="12%" align="center">🏷️ Type</th>
+    <th width="53%" align="left">💬 Feedback Message</th>
   </tr>
   <tr>
-    <td><strong>@yogender-ai</strong></td>
-    <td>⭐⭐⭐⭐⭐</td>
-    <td align="center">💬</td>
-    <td>## 💚 User Feedback | Field | Value | |-------|-------| | **Author** | yash | | **Type** | Positiv... <br/><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/2">View Thread &rarr;</a></td>
+    <td><strong><a href="https://github.com/yogender-ai">@yash</a></strong></td>
+    <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
+    <td align="center"><img src="https://img.shields.io/badge/-Praise-10b981?style=flat-square" alt="Praise" /></td>
+    <td><em>"This platform is amazing! The AI briefings are pinpoint accurate and the UI feels incredibly premium."</em> <br/><br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/2">View Context &rarr;</a></small></td>
   </tr>
 </table>
+
+<br/>
+<div align="center">
+  <img src="https://img.shields.io/badge/Sync_Status-Live-10b981?style=flat-square&logo=github-actions" />
+  &nbsp; <img src="https://img.shields.io/badge/Last_Sync-Apr_02,_16:05_UTC-6366f1?style=flat-square" />
+</div>
 <!-- LIVE_FEEDBACK_END -->
 
 ---
