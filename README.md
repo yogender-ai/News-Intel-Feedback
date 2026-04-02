@@ -163,6 +163,12 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
     <th width="53%" align="left">💬 Feedback Message</th>
   </tr>
   <tr>
+    <td><strong><a href="https://github.com/yogender-ai">@....................</a></strong></td>
+    <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
+    <td align="center"><img src="https://img.shields.io/badge/-Praise-10b981?style=flat-square" alt="Praise" /></td>
+    <td><em>"..........................."</em> <br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/6">View Context &rarr;</a></small></td>
+  </tr>
+  <tr>
     <td><strong><a href="https://github.com/yogender-ai">@Jyoti Rana</a></strong></td>
     <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
     <td align="center"><img src="https://img.shields.io/badge/-Praise-10b981?style=flat-square" alt="Praise" /></td>
