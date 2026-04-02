@@ -155,7 +155,6 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
   </a>
 </div>
 <br/>
-
 <table width="100%">
   <tr style="background: rgba(99, 102, 241, 0.1);">
     <th width="20%" align="left">👤 User</th>
@@ -164,17 +163,22 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
     <th width="53%" align="left">💬 Feedback Message</th>
   </tr>
   <tr>
-    <td><strong><a href="https://github.com/yogender-ai">@yash</a></strong></td>
+    <td><strong><a href="https://github.com/yogender-ai">@yogender-ai</a></strong></td>
     <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
-    <td align="center"><img src="https://img.shields.io/badge/-Praise-10b981?style=flat-square" alt="Praise" /></td>
-    <td><em>"This platform is amazing! The AI briefings are pinpoint accurate and the UI feels incredibly premium."</em> <br/><br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/2">View Context &rarr;</a></small></td>
+    <td align="center"><img src="https://img.shields.io/badge/-Feedback-6366f1?style=flat-square" alt="Feedback" /></td>
+    <td><em>"Loving it..It provides real-time news and market updates, which makes it very useful.  The “Analyze This Story” feature adds a smart AI touch. Overall, it is..."</em> <br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/3">View Context &rarr;</a></small></td>
+  </tr>
+  <tr>
+    <td><strong><a href="https://github.com/yogender-ai">@yogender-ai</a></strong></td>
+    <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
+    <td align="center"><img src="https://img.shields.io/badge/-Feedback-6366f1?style=flat-square" alt="Feedback" /></td>
+    <td><em>"great"</em> <br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/2">View Context &rarr;</a></small></td>
   </tr>
 </table>
-
 <br/>
 <div align="center">
   <img src="https://img.shields.io/badge/Sync_Status-Live-10b981?style=flat-square&logo=github-actions" />
-  &nbsp; <img src="https://img.shields.io/badge/Last_Sync-Apr_02,_16:05_UTC-6366f1?style=flat-square" />
+  &nbsp; <img src="https://img.shields.io/badge/Last_Sync-Apr_02,_10:40_UTC-6366f1?style=flat-square" />
 </div>
 <!-- LIVE_FEEDBACK_END -->
 
