@@ -1,105 +1,225 @@
-<h1 align="center">
-  <img src="https://raw.githubusercontent.com/yogender-ai/NewsIntel/main/frontend/public/favicon.ico" width="40" alt="NewsIntel Icon" valign="middle" /> 
-  News Intelligence Platform
-</h1>
+<div align="center">
 
-<p align="center">
-  <strong>A premium, real-time AI-powered news curation and NLP intelligence dashboard.</strong>
-</p>
+<!-- Animated Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,50:a855f7,100:ec4899&height=220&section=header&text=NewsIntel%20⚡&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI-Powered%20News%20Intelligence%20Platform&descSize=18&descAlignY=55&descColor=e0e7ff" width="100%" />
 
-<p align="center">
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" />
-  <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000" />
-  <img src="https://img.shields.io/badge/Gemini_2.0-4285F4?style=for-the-badge&logo=google&logoColor=white" />
-</p>
+<br/>
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#screenshots">Screenshots</a> •
-  <a href="#quick-start">Quick Start</a>
-</p>
+<!-- Dynamic Badges -->
+[![Live Platform](https://img.shields.io/badge/🌐_Live_Platform-newsintel.yogender1.me-6366f1?style=for-the-badge&labelColor=0f0f23)](https://newsintel.yogender1.me)
+[![Stars](https://img.shields.io/github/stars/yogender-ai/News-Intel-Feedback?style=for-the-badge&logo=github&color=f59e0b&labelColor=0f0f23&label=⭐%20Stars)](https://github.com/yogender-ai/News-Intel-Feedback)
+[![Issues](https://img.shields.io/github/issues/yogender-ai/News-Intel-Feedback?style=for-the-badge&logo=github&color=10b981&labelColor=0f0f23&label=💬%20Feedback)](https://github.com/yogender-ai/News-Intel-Feedback/issues)
+[![Forks](https://img.shields.io/github/forks/yogender-ai/News-Intel-Feedback?style=for-the-badge&logo=git&color=a855f7&labelColor=0f0f23)](https://github.com/yogender-ai/News-Intel-Feedback/network)
+
+<br/>
+
+<!-- Tech Stack Badges -->
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=FastAPI&logoColor=white" />
+<img src="https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=FFD62E" />
+<img src="https://img.shields.io/badge/HuggingFace_NLP-FFD21E?style=flat-square&logo=huggingface&logoColor=000" />
+<img src="https://img.shields.io/badge/Google_Gemini_2.0-4285F4?style=flat-square&logo=google&logoColor=white" />
+<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" />
+<img src="https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=000" />
+<img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
+
+<br/><br/>
+
+> **NewsIntel** is a premium, real-time AI-powered news intelligence platform that aggregates,  
+> analyzes, and visualizes global news using state-of-the-art NLP models and Google Gemini AI.  
+> This repository handles **community feedback & engagement** — your voice shapes the platform.
+
+<br/>
+
+[🌐 **Visit Live Platform**](https://newsintel.yogender1.me) · [💬 **Submit Feedback**](https://github.com/yogender-ai/News-Intel-Feedback/issues/new) · [⭐ **Star This Repo**](https://github.com/yogender-ai/News-Intel-Feedback)
+
+</div>
 
 ---
 
-## ⚡ Features
+## ⚡ What is NewsIntel?
 
-News Intelligence goes far beyond a simple RSS aggregator. It uses state-of-the-art NLP models and a high-performance backend to dissect live news feeds, offering deep intelligence briefings instantly.
+NewsIntel goes far beyond a simple news aggregator. It's a **full-stack AI intelligence platform** that processes live news feeds through a sophisticated NLP pipeline, delivering executive-grade briefings in real time.
 
-- **🌍 Multi-Region Real-Time Aggregation:** Scrapes live Google News RSS feeds across 14+ regions globally, isolating top-tier journalism.
-- **🤖 Deep NLP Pipeline:** Extracts content locally using `newspaper3k` and processes text with Hugging Face models for:
-  - Sentimental Analysis
-  - Entity Recognition (NER)
-- **🧠 Automated Intelligence Briefings:** Hands off aggregated top stories to Google's Gemini 2.0 Flash to stitch together a comprehensive, analytical executive summary of the topic.
-- **✨ Premium UI/UX:** Built with React & Vite using ultra-smooth glassmorphism, dynamic animations, and complex SVG charting libraries to visualize sentiment shifts and sources.
+<table>
+<tr>
+<td width="50%">
 
-## 🛠 Tech Stack
+### 🧠 AI Intelligence Engine
+- **Multi-Region Aggregation** — Scrapes 14+ global news regions via Google News RSS
+- **Deep NLP Pipeline** — Sentiment analysis, entity recognition (NER), and topic classification
+- **Gemini 2.0 Flash** — AI-generated executive intelligence briefings from aggregated stories
+- **Smart Caching** — TTL-based caching with force-refresh for real-time accuracy
 
-**Frontend:** React 18, Vite, Lucide-React, Recharts (for analytics).  
-**Backend:** FastAPI, Python 3.10+, Uvicorn, httpx.  
-**AI/NLP Models:** Google Gemini `gemini-2.0-flash`, Hugging Face (`distilBART`, `twitter-roberta`, `bert-base-NER`).  
-**Deployment:** Vercel (Frontend), Render (Backend).
+</td>
+<td width="50%">
 
-## 📸 Screenshots
+### ✨ Premium Experience
+- **Glassmorphism UI** — Ultra-modern dark theme with smooth animations
+- **Live Data Feeds** — Real-time stock tickers, weather, and breaking news
+- **Split-Flap Headlines** — Dynamic retro-modern headline animations  
+- **Text-to-Speech** — Built-in premium TTS for article narration
+- **Mobile Responsive** — Pixel-perfect on every screen size
 
-Discover the deep analytics and the beautiful, "alive" UI aesthetic of the News Intelligence Platform dashboard.
+</td>
+</tr>
+</table>
 
-> *(Note: Ensure these screenshots are pushed to your root directory so they load properly.)*
+---
 
-### Main Dashboard & Result Analytics
+## 📸 Platform Showcase
+
+Discover the deep analytics and the **"alive" premium UI** of NewsIntel.
+
+### 🖥️ Main Dashboard & Intelligence Briefing
 ![Dashboard View](Screenshot%202026-04-02%20062641.png)
 
-### NLP Data Visualizations
+### 📊 NLP Analytics & Sentiment Visualization
 ![Data View](Screenshot%202026-04-02%20062649.png)
 
-### Article Deep-Dive
+### 📰 Article Deep-Dive with Source Analysis
 ![Articles View](Screenshot%202026-04-02%20070031.png)
 
-### Trending & Weather Live Widgets
+### 🌤️ Live Weather & Trending Widgets
 ![Live Widgets View](Screenshot%202026-04-02%20071804.png)
 
-## 🚀 Quick Start
+---
 
-To run the application locally, you will need a Google Gemini API Key and a Hugging Face Token.
+## 🛠️ Tech Architecture
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yogender-ai/NewsIntel.git
-cd NewsIntel
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      FRONTEND (Vercel)                      │
+│  React 18 · Vite · Lucide Icons · Recharts · Glassmorphism │
+├─────────────────────────────────────────────────────────────┤
+│                         ↕ REST API                          │
+├─────────────────────────────────────────────────────────────┤
+│                      BACKEND (Render)                       │
+│              FastAPI · Python 3.10+ · Uvicorn               │
+├─────────────────┬───────────────────┬───────────────────────┤
+│  🤖 NLP Models  │  🧠 AI Briefings  │  📡 Data Sources     │
+│  DistilBART     │  Gemini 2.0 Flash │  Google News RSS     │
+│  RoBERTa        │  Executive Summ.  │  WeatherAPI          │
+│  BERT-NER       │  Topic Analysis   │  Financial APIs      │
+└─────────────────┴───────────────────┴───────────────────────┘
 ```
 
-### 2. Setup the Backend
-Navigate to the `backend` directory, install requirements, and start FastAPI.
+| Layer | Technology | Purpose |
+|:------|:-----------|:--------|
+| **Frontend** | React 18, Vite, Lucide-React, Recharts | Premium UI with glassmorphism, charting, and animations |
+| **Backend** | FastAPI, Python 3.10+, Uvicorn, httpx | High-performance async API with smart caching |
+| **NLP** | HuggingFace (DistilBART, RoBERTa, BERT-NER) | Sentiment analysis, summarization, entity extraction |
+| **AI** | Google Gemini 2.0 Flash | Executive intelligence briefing generation |
+| **Deployment** | Vercel (FE) + Render (BE) | Global CDN + auto-scaling backend |
+
+---
+
+## 💬 Community Feedback
+
+This repository is the **community hub** for NewsIntel. Your feedback is submitted directly as GitHub Issues and displayed live on the platform.
+
+### How Feedback Works
+
+```
+User clicks "Feedback" → Submits via platform UI → Backend creates GitHub Issue
+                                                          ↓
+      Live Feedback Wall ← Backend fetches Issues ← This Repository
+```
+
+### Types of Feedback
+
+| Emoji | Type | Label | Description |
+|:------|:-----|:------|:------------|
+| 💚 | **Love it** | `praise` | Positive feedback about features you enjoy |
+| 💡 | **Idea** | `enhancement` | Feature requests and suggestions |
+| 🔴 | **Issue** | `bug` | Bug reports and problems encountered |
+
+### How to Submit Feedback
+
+1. **Via the Platform** — Click the floating ✨ **Feedback** button on [newsintel.yogender1.me](https://newsintel.yogender1.me)
+2. **Via GitHub** — [Open a new issue](https://github.com/yogender-ai/News-Intel-Feedback/issues/new) directly
+
+Every piece of feedback includes a **star rating (1-5)**, emotion type, and timestamp.
+
+---
+
+## ⭐ Support This Project
+
+If you find NewsIntel useful, please consider:
+
+- ⭐ **Star this repository** — It helps with visibility and motivation!
+- 💬 **Leave feedback** — Your ideas directly shape the platform
+- 🔗 **Share with others** — Spread the word about AI-powered news intelligence
+
+<div align="center">
+
+### ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yogender-ai/News-Intel-Feedback&type=Date&theme=dark)](https://star-history.com/#yogender-ai/News-Intel-Feedback&Date)
+
+</div>
+
+---
+
+## 🚀 Quick Start (Local Development)
+
+To run the full NewsIntel platform locally:
+
+### Prerequisites
+- **Node.js** 18+ & npm
+- **Python** 3.10+
+- API Keys: [Google Gemini](https://ai.google.dev/) · [HuggingFace](https://huggingface.co/settings/tokens) · [GitHub PAT](https://github.com/settings/tokens)
+
+### 1. Clone & Setup Backend
 ```bash
-cd backend
+git clone https://github.com/yogender-ai/NewsIntel.git
+cd NewsIntel/backend
+
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# Create a .env file with:
-# GEMINI_API_KEY=your_key
-# HF_TOKEN=your_token
+# Create .env file
+echo "GEMINI_API_KEY=your_gemini_key" > .env
+echo "HF_TOKEN=your_huggingface_token" >> .env
+echo "GITHUB_PAT=your_github_pat" >> .env
 
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 3. Setup the Frontend
-Navigate to the `frontend` directory, install Node dependencies, and fire up Vite.
+### 2. Setup Frontend
 ```bash
 cd ../frontend
 npm install
 
-# Create a .env file with:
-# VITE_API_URL=http://localhost:8000
+# Create .env file
+echo "VITE_API_URL=http://localhost:8000" > .env
 
 npm run dev
 ```
 
+### 3. Open in Browser
+Navigate to `http://localhost:5173` — you're live! 🎉
+
 ---
 
-<p align="center">
-  <b>Built by Yogender AI</b><br>
-  <i>Empowering open-source data intelligence.</i>
-</p>
+## 📄 License
+
+This project is proprietary. All rights reserved by **Yogender AI**.  
+The source code is maintained in a private repository.  
+This public repository is for community engagement and feedback only.
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,50:a855f7,100:ec4899&height=120&section=footer" width="100%" />
+
+**Built with 💜 by [Yogender AI](https://github.com/yogender-ai)**
+
+*Empowering intelligence through AI-driven news analysis*
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-yogender1.me-6366f1?style=flat-square&logo=safari&logoColor=white)](https://yogender1.me)
+[![GitHub](https://img.shields.io/badge/GitHub-yogender--ai-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/yogender-ai)
+
+</div>
