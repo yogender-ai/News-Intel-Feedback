@@ -52,24 +52,35 @@ def extract_metadata_from_body(body):
 
 def format_issues(issues):
     if not issues:
-        return "*Awaiting fresh community feedback...*"
+        return "<div align=\"center\">\n\n*Awaiting fresh community feedback...*\n\n</div>"
         
     html = []
-    html.append("<table>")
-    html.append("  <tr>")
-    html.append("    <th width=\"15%\">User</th>")
-    html.append("    <th width=\"10%\">Rating</th>")
-    html.append("    <th width=\"10%\">Type</th>")
-    html.append("    <th width=\"65%\">Feedback</th>")
+    
+    # ── Interactive Header ──
+    html.append("<div align=\"center\">")
+    html.append("  <a href=\"https://newsintel.yogender1.me/#feedback-section\">")
+    html.append("    <img src=\"https://img.shields.io/badge/✨_Post_Feedback_Live-6366f1?style=for-the-badge&logo=rocket\" alt=\"Post Feedback\" />")
+    html.append("  </a>")
+    html.append("  &nbsp;")
+    html.append("  <a href=\"https://github.com/yogender-ai/News-Intel-Feedback/issues\">")
+    html.append("    <img src=\"https://img.shields.io/badge/💬_View_All_Discussions-0f0f23?style=for-the-badge&logo=github\" alt=\"View All\" />")
+    html.append("  </a>")
+    html.append("</div>")
+    html.append("<br/>")
+    
+    html.append("<table width=\"100%\">")
+    html.append("  <tr style=\"background: rgba(99, 102, 241, 0.1);\">")
+    html.append("    <th width=\"20%\" align=\"left\">👤 User</th>")
+    html.append("    <th width=\"15%\" align=\"center\">⭐ Rating</th>")
+    html.append("    <th width=\"12%\" align=\"center\">🏷️ Type</th>")
+    html.append("    <th width=\"53%\" align=\"left\">💬 Feedback Message</th>")
     html.append("  </tr>")
     
     for issue in issues:
         author = issue['user']['login']
-        # If the bot submitted it on behalf of someone, it's usually in the title or body
         title = issue['title']
         body = issue.get('body', '')
         
-        # In our NewsIntel API, the title is usually: "Feedback from UserName"
         display_author = author
         if title.startswith("Feedback from "):
             display_author = title.replace("Feedback from ", "").strip()
@@ -81,27 +92,51 @@ def format_issues(issues):
         url = issue['html_url']
         metadata = extract_metadata_from_body(body)
         
-        # Clean up body to a short message
-        # Exclude the metadata block at the top if present
+        # Robust message extraction
         clean_msg = ""
-        for line in body.split('\n'):
-            if line.strip() and not line.startswith("**") and not line.startswith("- "):
-                clean_msg += line + " "
-                if len(clean_msg) > 100:
-                    clean_msg = clean_msg[:97] + "..."
-                    break
+        # Look for the message between "### Message" and the footer line "---"
+        msg_parts = re.split(r'### Message', body)
+        if len(msg_parts) > 1:
+            msg_content = msg_parts[1].split('---')[0].strip()
+            clean_msg = msg_content
+        else:
+            # Fallback: find any text that isn't a table or header
+            lines = [l.strip() for l in body.split('\n') if l.strip() and not re.match(r'^(#|\||\*\*|- )', l)]
+            clean_msg = " ".join(lines)
         
         if not clean_msg:
             clean_msg = title
             
+        # Truncate and clean
+        if len(clean_msg) > 160:
+            clean_msg = clean_msg[:157] + "..."
+        clean_msg = clean_msg.replace('\n', ' ').strip()
+        
+        # Determine badge color based on emotion
+        colors = {"💚": "10b981", "💡": "f59e0b", "🔴": "f43f5e", "💬": "6366f1"}
+        color = colors.get(metadata['emotion'], "6366f1")
+        type_label = "Feedback"
+        if metadata['emotion'] == "💚": type_label = "Praise"
+        elif metadata['emotion'] == "💡": type_label = "Idea"
+        elif metadata['emotion'] == "🔴": type_label = "Bug"
+            
         html.append("  <tr>")
-        html.append(f"    <td><strong>@{display_author}</strong></td>")
-        html.append(f"    <td>{metadata['rating']}</td>")
-        html.append(f"    <td align=\"center\">{metadata['emotion']}</td>")
-        html.append(f"    <td>{clean_msg} <br/><a href=\"{url}\">View Thread &rarr;</a></td>")
+        html.append(f"    <td><strong><a href=\"https://github.com/{author}\">@{display_author}</a></strong></td>")
+        html.append(f"    <td align=\"center\"><code style=\"color: #f59e0b;\">{metadata['rating']}</code></td>")
+        html.append(f"    <td align=\"center\"><img src=\"https://img.shields.io/badge/-{type_label}-{color}?style=flat-square\" alt=\"{type_label}\" /></td>")
+        html.append(f"    <td><em>\"{clean_msg}\"</em> <br/><small><a href=\"{url}\">View Context &rarr;</a></small></td>")
         html.append("  </tr>")
         
     html.append("</table>")
+    
+    # ── Footer Stats ──
+    now = datetime.utcnow().strftime("%b %d, %H:%M UTC")
+    html.append("<br/>")
+    html.append("<div align=\"center\">")
+    html.append(f"  <img src=\"https://img.shields.io/badge/Sync_Status-Live-10b981?style=flat-square&logo=github-actions\" />")
+    html.append(f"  &nbsp; <img src=\"https://img.shields.io/badge/Last_Sync-{now.replace(' ', '_')}-6366f1?style=flat-square\" />")
+    html.append("</div>")
+    
     return "\n".join(html)
 
 def update_readme(feedback_html):
@@ -118,6 +153,9 @@ def update_readme(feedback_html):
         return False
         
     new_content = pattern.sub(f"{start_marker}\n{feedback_html}\n{end_marker}", content)
+    
+    # Also update the 'stars' badge if we want to be fancy
+    # But for now let's just do the feedback
     
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
