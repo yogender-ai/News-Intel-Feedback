@@ -166,6 +166,12 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
     <td><strong><a href="https://github.com/yogender-ai">@Jyoti Rana</a></strong></td>
     <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
     <td align="center"><img src="https://img.shields.io/badge/-Praise-10b981?style=flat-square" alt="Praise" /></td>
+    <td><em>"..................."</em> <br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/5">View Context &rarr;</a></small></td>
+  </tr>
+  <tr>
+    <td><strong><a href="https://github.com/yogender-ai">@Jyoti Rana</a></strong></td>
+    <td align="center"><code style="color: #f59e0b;">⭐⭐⭐⭐⭐</code></td>
+    <td align="center"><img src="https://img.shields.io/badge/-Praise-10b981?style=flat-square" alt="Praise" /></td>
     <td><em>"Great Job . The overall user experience is very good."</em> <br/><small><a href="https://github.com/yogender-ai/News-Intel-Feedback/issues/4">View Context &rarr;</a></small></td>
   </tr>
   <tr>
@@ -184,7 +190,7 @@ Every piece of feedback includes a **star rating (1-5)**, emotion type, and time
 <br/>
 <div align="center">
   <img src="https://img.shields.io/badge/Sync_Status-Live-10b981?style=flat-square&logo=github-actions" />
-  &nbsp; <img src="https://img.shields.io/badge/Last_Sync-Apr_02,_14:23_UTC-6366f1?style=flat-square" />
+  &nbsp; <img src="https://img.shields.io/badge/Last_Sync-Apr_02,_14:24_UTC-6366f1?style=flat-square" />
 </div>
 <!-- LIVE_FEEDBACK_END -->
 
